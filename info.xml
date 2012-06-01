@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <extension key="nz.co.fuzion.paystation" type="payment">
-  <downloadUrl>https://svn.fuzion.co.nz/repos/fuzion-code/trunk/civicrm/extensions/nz.co.fuzion.omngateway.zip</downloadUrl>
+  <downloadUrl>https://github.com/downloads/eileenmcnaughton/nz.co.fuzion.omngateway/nz.co.fuzion.omngateway.zip</downloadUrl>
   <file>Omngateway</file>
   <name>Omngateway</name>
   <description>OmnGateway</description>
