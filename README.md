@@ -7,10 +7,10 @@ Testing Notes
 ###############################
 #- installation
 ###############################
-CiviCRM has been bringing in a new installation method - I have the processor working using the 'old' way 
-on the circus site (note that this is a live site but I can happily delete test contacts from it as long as you 
-let me know
-- the new installation method doesn't seem to quite work for local installs but is being 
+CiviCRM has been bringing in a new installation method
+I have tested downloading the processor from this git repo & installing on a clean 4.2 alpha site. 
+I have it working on a 4.1 live site - per below. Note that 'sensible' testing is OK here even though it's a live
+site - but don't create loads of fake contacts.
 
 ######################################
 #Transaction tests
