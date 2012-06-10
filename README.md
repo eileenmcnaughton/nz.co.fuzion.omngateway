@@ -7,10 +7,20 @@ Testing Notes
 ###############################
 #- installation
 ###############################
-This Extension is packaged for the new CiviCRM extensions installation. To install it download it to your
-extensions directory, unzip it & then go to 'manage extensions' through the GUI. 
+This Extension is packaged for the new CiviCRM extensions installation. To install it create a folder called 
+nz.co.fuzion.omngateway in your extensions directory, download this extension to that folder and
+unzip it. Then, on your CiviCRM site, go to 'manage extensions' (under adminster/ customize data and screens) 
+through the UI. Choose to enable the extension. You can then create a OmnGateway processor through
+Administer/System Settings/PaymentProcessors.
 
-Testing - I tested installation on a 4.2 install. I used the processor on a 4.1 site where I had manually installed
+####
+# Testing status
+############
+
+Testing - I tested installation on a 4.2 install. I also installed the processor from github to a 4.1 site &
+did the tests described below.
+
+Test credentials = test for both username & password
 
 ######################################
 #Transaction tests
