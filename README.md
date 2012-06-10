@@ -22,22 +22,21 @@ I tested visa for
 - Event page http://www.circus.org.nz/civicrm/event/register?id=761&reset=1
 
                        
-#visa
-
+- visa
 successful contribution processed
 Amount: N 1.00
 Date: June 10th, 2012 10:54 PM
 Transaction #: 31769
-using test credit card :Visa - 4005 5500 0000 0019 (future expiry date & made up csv
+using test credit card :Visa - 4005 5500 0000 0019 
+future expiry date & made up csv
 (I also tested with a bunch on invalid characters in my name & it was fine - !#,'/\"@
 
-#Event contribution 
-
+- Event contribution 
 Event Total:  $ 1.00
 Transaction Date: June 11th, 2012 12:17 AM
 Transaction #: 31781 
 
-Incorrect credit card (4111111111111111)
+- Incorrect credit card (4111111111111111)
 Payment Processor Error message
 9010: Error: [Declined] - from payment processor 
 
@@ -54,7 +53,7 @@ Amount: $ 1.00
 Date: June 10th, 2012 11:31 PM
 Transaction #: 31773
 
-DISCOVER
+- DISCOVER
 6011000993010978 April 2013 CSV 111
 Payment Processor Error message
 9010: Error: [Invalid Merchant number or Subscriber does not exist or is inactive] - from payment processor 
