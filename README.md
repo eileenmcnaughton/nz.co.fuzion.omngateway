@@ -22,7 +22,8 @@ I tested visa for
 - Event page http://www.circus.org.nz/civicrm/event/register?id=761&reset=1
 
                        
-- visa
+#visa
+
 successful contribution processed
 Amount: N 1.00
 Date: June 10th, 2012 10:54 PM
@@ -30,7 +31,7 @@ Transaction #: 31769
 using test credit card :Visa - 4005 5500 0000 0019 (future expiry date & made up csv
 (I also tested with a bunch on invalid characters in my name & it was fine - !#,'/\"@
 
-Event contribution 
+#Event contribution 
 
 Event Total:  $ 1.00
 Transaction Date: June 11th, 2012 12:17 AM
@@ -40,12 +41,13 @@ Incorrect credit card (4111111111111111)
 Payment Processor Error message
 9010: Error: [Declined] - from payment processor 
 
+
 - Mastercard rejected
 Mastercard - 5424180279791765 exp: 04/13 - csv 000
 Payment Processor Error message
 9010: Error: [Referral] - from payment processor 
 
-AMEX
+- AMEX
 373953244361001 - randon date - successful - needed 4 character CVS.
 NOTE I added problematic characters to the contribution page before testing - ie. TEST PAGE!'#*"
 Amount: $ 1.00
