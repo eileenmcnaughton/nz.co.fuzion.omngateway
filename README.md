@@ -12,7 +12,9 @@ on the circus site (note that this is a live site but I can happily delete test 
 let me know
 - the new installation method doesn't seem to quite work for local installs but is being 
 
-
+######################################
+#Transaction tests
+######################################
 - Contribution - -page - http://www.circus.org.nz/civicrm/contribute/transact?reset=1&id=1
 successful contribution processed
 Amount: N 1.00
@@ -32,3 +34,7 @@ Amount: $ 1.00
 Date: June 10th, 2012 11:31 PM
 Transaction #: 31773
 
+DISCOVER
+6011000993010978 April 2013 CSV 111
+Payment Processor Error message
+9010: Error: [Invalid Merchant number or Subscriber does not exist or is inactive] - from payment processor 
