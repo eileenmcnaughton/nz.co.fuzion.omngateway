@@ -36,6 +36,10 @@ Event Total:  $ 1.00
 Transaction Date: June 11th, 2012 12:17 AM
 Transaction #: 31781 
 
+Incorrect credit card (4111111111111111)
+Payment Processor Error message
+9010: Error: [Declined] - from payment processor 
+
 - Mastercard rejected
 Mastercard - 5424180279791765 exp: 04/13 - csv 000
 Payment Processor Error message
