@@ -18,11 +18,11 @@ site - but don't create loads of fake contacts.
 These tests were carried on out a 4.1 live site
 I tested visa for 
 - backoffice contribution
-- Contribution - -page - http://www.circus.org.nz/civicrm/contribute/transact?reset=1&id=1
+- Contribution page http://www.circus.org.nz/civicrm/contribute/transact?reset=1&id=1
 - Event page http://www.circus.org.nz/civicrm/event/register?id=761&reset=1
--
-                       -
-- visa                       - 
+
+                       
+- visa
 successful contribution processed
 Amount: N 1.00
 Date: June 10th, 2012 10:54 PM
@@ -30,7 +30,7 @@ Transaction #: 31769
 using test credit card :Visa - 4005 5500 0000 0019 (future expiry date & made up csv
 (I also tested with a bunch on invalid characters in my name & it was fine - !#,'/\"@
 
-Event contribution - 
+Event contribution 
 
 Event Total:  $ 1.00
 Transaction Date: June 11th, 2012 12:17 AM
