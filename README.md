@@ -7,10 +7,10 @@ Testing Notes
 ###############################
 #- installation
 ###############################
-CiviCRM has been bringing in a new installation method
-I have tested downloading the processor from this git repo & installing on a clean 4.2 alpha site. 
-I have it working on a 4.1 live site - per below. Note that 'sensible' testing is OK here even though it's a live
-site - but don't create loads of fake contacts.
+This Extension is packaged for the new CiviCRM extensions installation. To install it download it to your
+extensions directory, unzip it & then go to 'manage extensions' through the GUI. 
+
+Testing - I tested installation on a 4.2 install. I used the processor on a 4.1 site where I had manually installed
 
 ######################################
 #Transaction tests
