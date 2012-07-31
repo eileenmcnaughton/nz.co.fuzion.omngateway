@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <extension key="nz.co.fuzion.omngateway" type="payment">
-  <downloadUrl>https://github.com/downloads/eileenmcnaughton/nz.co.fuzion.omngateway/nz.co.fuzion.omngateway.zip</downloadUrl>
+  <downloadUrl>http://github.com/downloads/eileenmcnaughton/nz.co.fuzion.omngateway/nz.co.fuzion.omngateway.zip</downloadUrl>
   <file>nz.co.fuzion.omngateway</file>
   <name>nz.co.fuzion.omngateway</name>
   <description>OmnGateway</description>
