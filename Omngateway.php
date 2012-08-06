@@ -92,6 +92,8 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment
            'accountNo' => $params['credit_card_number'],
            'expr'      => sprintf('%02d', (int) substr ($params['year'], 2, 2).$params['month']),
            'cvv'       => $params[ 'cvv2'],
+           'customer'  => $params[ 'display_name'],
+           'email'     => $params[ 'email'],
       //     'avs1'      => $params['street_address'],
         //   'avs2'      => $params['postal_code'],
          );
