@@ -91,9 +91,9 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment
            'amount'    => $params['amount']* 100,// in cents
            'accountNo' => $params['credit_card_number'],
            'expr'      => sprintf('%02d', (int) substr ($params['year'], 2, 2).$params['month']),
-           'cvv'       => $params[ 'cvv2'],
-           'customer'  => $params[ 'display_name'],
-           'email'     => $params[ 'email'],
+           'cvv'       => $params['cvv2'],
+           'customer'  => $params['display_name'],
+           'email'     => $params['email'],
       //     'avs1'      => $params['street_address'],
         //   'avs2'      => $params['postal_code'],
          );
@@ -146,7 +146,7 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment
         /**********************************************************
          * Send to the payment processor using cURL
          **********************************************************/
-$host = "https://omngateway.net/authorize/";
+        $host = "https://omngateway.net/authorize/";
         $ch = curl_init ($host);
         if ( ! $ch ) {
             return self::errorExit(9004, 'Could not initiate connection to payment gateway');
