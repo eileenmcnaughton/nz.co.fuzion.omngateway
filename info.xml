@@ -6,7 +6,7 @@
   <description>OmnGateway</description>
   <urls>
     <url desc="Main Extension Page"></url>
-    <url desc="Documentation"></url>
+    <url desc="Documentation">https://github.com/eileenmcnaughton/nz.co.fuzion.omngateway/blob/master/README.md</url>
     <url desc="Support"></url>
     <url desc="Licensing"></url>
   </urls>
