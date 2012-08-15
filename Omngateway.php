@@ -92,7 +92,7 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment
            'accountNo' => $params['credit_card_number'],
            'expr'      => sprintf('%02d', (int) substr ($params['year'], 2, 2).$params['month']),
            'cvv'       => $params['cvv2'],
-           'customer'  => $params['display_name'],
+           'customer'  => $params['billing_first_name'] . ' ' . $params['billing_last_name'],
            'email'     => $params['email'],
       //     'avs1'      => $params['street_address'],
         //   'avs2'      => $params['postal_code'],
@@ -107,7 +107,7 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment
      **********************************************************/
     function doDirectPayment( &$params )
     {
-        if ( $params['is_recur'] == true ) {
+        if ( isset($params['is_recur']) && $params['is_recur'] == true ) {
             CRM_Core_Error::fatal( ts( 'Omngateway - recurring payments not implemented' ) );
         }
 
