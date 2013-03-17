@@ -6,7 +6,7 @@
  +----------------------------------------------------------------------------+
  | Licensed to CiviCRM under the Academic Free License version 3.0            |
  |                                                                            |
- | Written & Contributed by Eileen McNaughton - Feb  2012 
+ | Written & Contributed by Eileen McNaughton - Feb  2012
  | Sponsored by OMNGateway            |
  +----------------------------------------------------------------------------+
 */
@@ -56,15 +56,15 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment
         $this->_processorName    = 'OMNGateway';
     }
 
-    /** 
-     * singleton function used to manage this object 
-     * 
+    /**
+     * singleton function used to manage this object
+     *
      * @param string $mode the mode of operation: live or test
      *
-     * @return object 
-     * @static 
-     * 
-     */ 
+     * @return object
+     * @static
+     *
+     */
     static function &singleton( $mode, &$paymentProcessor ) {
         $processorName = $paymentProcessor['name'];
         if (self::$_singleton[$processorName] === null ) {
@@ -80,26 +80,24 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment
      *  Comment out irrelevant fields
      **********************************************************/
     function mapProcessorFieldstoParams($params)
-    { 
+    {
         /**********************************************************
          * compile array
          * Payment Processor field name fields from $params array
          **********************************************************/
          $requestFields = array(
            'version'   => '1.0',
-           'authType'  => 'EO',
+           'authType'  => 'E0',
            'amount'    => $params['amount']* 100,// in cents
            'accountNo' => $params['credit_card_number'],
-           'expr'      => sprintf('%02d', (int) substr ($params['year'], 2, 2).$params['month']),
+           'expr'      => sprintf('%02d', (int) ($params['month'] . substr ($params['year'], 2, 2))),
            'cvv'       => $params['cvv2'],
            'customer'  => $params['billing_first_name'] . ' ' . $params['billing_last_name'],
            'email'     => $params['email'],
-      //     'avs1'      => $params['street_address'],
-        //   'avs2'      => $params['postal_code'],
          );
     return $requestFields;
     }
-  
+
 
     /**********************************************************
      * This function sends request and receives response from
@@ -151,12 +149,12 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment
         if ( ! $ch ) {
             return self::errorExit(9004, 'Could not initiate connection to payment gateway');
         }
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
-        curl_setopt($ch, CURLOPT_POSTFIELDS,  $json);                                                                  
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
-           'Content-Type: application/json',                                                                                
-           'Content-Length: ' . strlen( $json))   
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_POSTFIELDS,  $json);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+           'Content-Type: application/json',
+           'Content-Length: ' . strlen( $json))
         );
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);//civicrm doesn't force / facilitate proper certificate config
         curl_setopt($ch, CURLOPT_SSLVERSION , 3); // this seems to be a 'feature' of the OMNGateway - probably the Open SSL version requires this
@@ -189,7 +187,7 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment
 
             return self::errorExit( $errorNum, "Curl error - ".$errorDesc." your key is located at ".$key." the url is ".$host." json is ".$json." processor response = ". $processorResponse );
         }
-    
+
         /**********************************************************
          * If null data returned - tell 'em and bail out
          *
@@ -200,13 +198,13 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment
             curl_close( $ch);
             return self::errorExit( 9006, "Error: Connection to payment gateway failed - no data returned.");
         }
-    
+
         /**********************************************************
          // If gateway returned no data - tell 'em and bail out
          **********************************************************/
         if ( empty($responseData) ) {
             curl_close( $ch);
-            return self::errorExit( 9007, "Error: No data returned from payment gateway.");   
+            return self::errorExit( 9007, "Error: No data returned from payment gateway.");
         }
 
         /**********************************************************
@@ -225,12 +223,12 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment
          **********************************************************/
 
         if ( $processorResponse->responseCode == 1 ) {
-            return self::errorExit( 9010, "Error: [" .$processorResponse->responseText ."] - from payment processor");  
+            return self::errorExit( 9010, "Error: [" .$processorResponse->responseText ."] - from payment processor");
         }
         if ( $processorResponse->responseText == 'Approval') {
             if ( $this->_mode == 'test')  {
                 $params['trxn_id'] = 'test' . $processorResponse->transactionNo;//'trxn_id' is varchar(255) field. returned value is length 37
-              
+
             } else {
                $params['trxn_id'] = $processorResponse->transactionNo;//'trxn_id' is varchar(255) field. returned value is length 37
             }
