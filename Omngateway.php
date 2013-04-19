@@ -220,7 +220,7 @@ class nz_co_fuzion_omngateway extends CRM_Core_Payment {
     if ($processorResponse->responseCode == 1) {
       return self::errorExit(9010, "Error: [" . $processorResponse->responseText . "] - from payment processor");
     }
-    if ($processorResponse->responseText == 'Approval') {
+    if (isset($processorResponse->responseCode) && $processorResponse->responseCode == 0) {
       if ($this->_mode == 'test') {
         $params['trxn_id'] = 'test' . $processorResponse->transactionNo; //'trxn_id' is varchar(255) field. returned value is length 37
       }
